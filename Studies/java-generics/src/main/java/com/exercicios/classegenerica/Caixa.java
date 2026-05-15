@@ -13,8 +13,14 @@ public class Caixa <T> {
         caixaTexto.guardar("Guarana com rolha ");
         caixaTexto.guardar("Mais alguma coisa");
 
+        Caixa <Integer> caixaInt = new Caixa<>();
+        caixaInt.guardar(4002);
+        caixaInt.guardar(2003);
+
         List valor = caixaTexto.obter();
+        List valor2 = caixaInt.obter();
         System.out.println(valor);
+        System.out.println(valor2);
     }
 
     //Metodos da classe

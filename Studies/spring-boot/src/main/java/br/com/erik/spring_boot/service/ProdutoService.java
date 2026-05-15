@@ -76,4 +76,20 @@ public class ProdutoService {
     public void deleteProduct (Integer id){
         PRODUTOS.removeIf(p -> p.getId().equals(id));
     }
+
+    public ProdutoEntity partialUpdateProduct (ProdutoDTO produtoDTO, Integer id) throws NotFoundException {
+
+        ProdutoEntity produto = PRODUTOS.stream()
+                .filter(p -> p.getId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new NotFoundException("Produto não encontrado"));
+
+        produto.setNome(produtoDTO.getNome());
+        produto.setPreco(produtoDTO.getPreco());
+        produto.setQuantidade(produtoDTO.getQuantidade());
+
+        return produto;
+    }
+
+
 }

@@ -46,6 +46,14 @@ public class ProdutoController {
 
     }
 
+//    @PatchMapping("/{id}")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public ProdutoEntity partialUpdate (@RequestBody Integer id,
+//                                        @RequestBody ProdutoDTO produtoDTO) throws NotFoundException{
+//
+//        return produtoService.partialUpdateProduct(produtoDTO, id);
+//    }
+
 }
 
 
